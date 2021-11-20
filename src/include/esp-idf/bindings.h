@@ -4,6 +4,7 @@
 
 #include "esp_system.h"
 #include "esp_chip_info.h"
+#include "esp_bit_defs.h"
 
 //#include "esp_crc.h"
 #include "esp_log.h"
