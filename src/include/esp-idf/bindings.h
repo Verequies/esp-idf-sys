@@ -1,5 +1,3 @@
-#define MARK_FIX_753(req_name) const unsigned long int Fix753_##req_name = req_name;
-
 #include "sdkconfig.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -167,5 +165,3 @@
 #endif
 
 #endif
-
-MARK_FIX_753(BIT);
