@@ -21,14 +21,6 @@ mod common;
 #[cfg_attr(all(feature = "pio", not(feature = "native")), path = "pio.rs")]
 mod build_driver;
 
-#[derive(Debug)]
-pub struct Fix753 {}
-impl bindgen::callbacks::ParseCallbacks for Fix753 {
-    fn item_name(&self, original_item_name: &str) -> Option<String> {
-        Some(original_item_name.trim_start_matches("Fix753_").to_owned())
-    }
-}
-
 fn main() -> anyhow::Result<()> {
     let build_output = build_driver::build()?;
 
@@ -81,7 +73,6 @@ fn main() -> anyhow::Result<()> {
             .builder()?
             .ctypes_prefix("c_types")
             .header(header_file.try_to_str()?)
-            .parse_callbacks(Box::new(Fix753 {}))
             .blacklist_function("strtold")
             .blacklist_function("_strtold_r")
             .clang_args(build_output.components.clang_args())
