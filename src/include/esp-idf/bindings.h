@@ -2,6 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/portmacro.h"
+#include "led_strip.h"
 
 #include "esp_system.h"
 #include "esp_chip_info.h"
